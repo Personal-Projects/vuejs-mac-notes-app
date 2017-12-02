@@ -8,7 +8,12 @@
   </head>
 
   <body>
-    
+    <div class="note-selectors">
+      <div class="note-selector" v-for="note in notes">
+        <p class="note-selector-title">{{ note.body }}</p>
+        <p class="note-selector-timestamp">{{ note.timestamp }}</p>
+      </div>
+    </div>
   </body>
 
 </html>
