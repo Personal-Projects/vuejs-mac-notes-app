@@ -1,5 +1,15 @@
 {
   "name": "vuejs-mac-notes-app",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "eslint-plugin-vue": "^4.0.0-beta.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
 }
