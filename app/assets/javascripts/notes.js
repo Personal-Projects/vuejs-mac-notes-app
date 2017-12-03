@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });
       }
     },
-    methods: {
+    filters: {
       formatTitle: function(body) {
         var maxLength = 20;
         if (body.length > maxLength) {
@@ -30,6 +30,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
       formatTimestamp: function(timestamp) {
         return new Date(timestamp).toUTCString();
       }
+    },
+    methods: {
+      
     }
   });
 });
