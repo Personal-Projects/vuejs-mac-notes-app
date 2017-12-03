@@ -37,7 +37,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
     },
     methods: {
-      
+      selectNote: function(note) {
+        this.selectedNote = note;
+      }
     }
   });
 });
