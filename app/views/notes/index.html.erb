@@ -9,7 +9,11 @@
     <div id="app">
 
       <div class="note-selectors">
-        <div class="note-selector" v-for="note in transformedNotes">
+        <div class="note-selector"
+          v-for="note in transformedNotes"
+          v-on:click="selectNote(note)"
+          v-bind:class="{active: note === selectedNote}"
+        >
           <p class="note-selector-title">
             {{ note.body | formatTitle }}
           </p>
