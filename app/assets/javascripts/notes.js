@@ -39,6 +39,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
     methods: {
       selectNote: function(note) {
         this.selectedNote = note;
+      },
+      createNote: function() {
+        var newNote = {
+          id: Date.now(),
+          body: "",
+          timestamp: Date.now()
+        };
+        this.notes.push(newNote);
+        this.selectedNote = newNote;
       }
     },
     watch: {
