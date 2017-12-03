@@ -3,11 +3,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var app = new Vue({
     el: '#app',
     data: {
-      notes: [
+      notes: [],
+      selectedNotes: {}
+    },
+    mounted: function() {
+      this.notes = [
         {id: 1, body: "This is a first test", timestamp: Date.now()},
         {id: 2, body: "This is a second test", timestamp: Date.now()},
         {id: 3, body: "This is a third test", timestamp: Date.now()}
-      ]
+      ];
+      this.selectedNotes = this.notes[0];
     },
     computed: {
       transformedNotes: function() {
