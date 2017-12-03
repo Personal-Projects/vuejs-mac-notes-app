@@ -40,6 +40,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
       selectNote: function(note) {
         this.selectedNote = note;
       }
+    },
+    watch: {
+      notes: {
+        handler: function() {
+          this.selectedNote.timestamp = Date.now();
+        },
+        deep: true
+      }
     }
   });
 });
