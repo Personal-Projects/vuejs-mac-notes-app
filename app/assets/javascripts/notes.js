@@ -9,12 +9,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
         {id: 3, body: "This is a third test", timestamp: Date.now()}
       ]
     },
-    methods: {
-      transformNotes: function(notes) {
-        return notes.slice().sort(function(a, b) {
+    computed: {
+      transformedNotes: function() {
+        return this.notes.slice().sort(function(a, b) {
           return b.timestamp - a.timestamp
         });
-      },
+      }
+    },
+    methods: {
       formatTitle: function(body) {
         var maxLength = 20;
         if (body.length > maxLength) {
