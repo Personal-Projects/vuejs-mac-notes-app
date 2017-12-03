@@ -19,8 +19,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       transformedNotes: function() {
         return this.notes
           .filter(function(note) {
-            return
-              note.body.toLowerCase().indexOf(this.searchNoteText.toLowercase()) !== -1;
+            return note.body.toLowerCase().indexOf(this.searchNoteText.toLowerCase()) !== -1;
           }.bind(this))
           .sort(function(a, b) {
             return b.timestamp - a.timestamp

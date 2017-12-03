@@ -11,25 +11,27 @@
         <button class="toolbar-button" v-on:click="deleteNote()">Delete</button>
         <input class="toolbar-search" type="text" placeholder="Search..." v-model="searchNoteText">
       </div>
-      <div class="note-selectors">
-        <div class="note-selector"
-          v-for="note in transformedNotes"
-          v-on:click="selectNote(note)"
-          v-bind:class="{active: note === selectedNote}"
-        >
-          <p class="note-selector-title">
-            {{ note.body | formatTitle }}
-          </p>
-          <p class="note-selector-timestamp">
-            {{ note.timestamp | formatTimestamp }}
-          </p>
+      <div class="note-container">
+        <div class="note-selectors">
+          <div class="note-selector"
+            v-for="note in transformedNotes"
+            v-on:click="selectNote(note)"
+            v-bind:class="{active: note === selectedNote}"
+          >
+            <p class="note-selector-title">
+              {{ note.body | formatTitle }}
+            </p>
+            <p class="note-selector-timestamp">
+              {{ note.timestamp | formatTimestamp }}
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="note-editor">
-        <p class="note-editor-info">
-          {{ selectedNote.timestamp | formatTimestamp }}
-        </p>
-        <textarea class="note-editor-input" v-model="selectedNote.body"></textarea>
+        <div class="note-editor">
+          <p class="note-editor-info">
+            {{ selectedNote.timestamp | formatTimestamp }}
+          </p>
+          <textarea class="note-editor-input" v-model="selectedNote.body"></textarea>
+        </div>
       </div>
     </div>
   </body>
