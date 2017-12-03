@@ -17,7 +17,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     },
     computed: {
       transformedNotes: function() {
-        return this.notes.slice().sort(function(a, b) {
+        return this.notes
+        .filter(function(note) {
+          return
+            note.body.toLowerCase().indexOf(this.searchNoteText.toLowercase()) !== -1;
+        }.bind(this))
+        .sort(function(a, b) {
           return b.timestamp - a.timestamp
         });
       }
