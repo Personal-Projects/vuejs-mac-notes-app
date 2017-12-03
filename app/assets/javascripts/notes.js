@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     el: '#app',
     data: {
       notes: [],
-      selectedNote: {}
+      selectedNote: {},
+      searchNoteText: ""
     },
     mounted: function() {
       this.notes = [
